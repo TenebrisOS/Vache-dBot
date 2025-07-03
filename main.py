@@ -1,7 +1,7 @@
 import discord
 import json
 from api import GetPlayerBalance, GetAllItemPrices, GetContributionsLeaderboard, GetMoneyLeaderboard
-from discord import app_commands
+from discord import app_commands, Object, Interaction, Embed
 
 #region Variables
 with open ("config.json") as js:
@@ -44,8 +44,14 @@ async def on_message(message:discord.Message):
     description="Outputs a desired player's balance on Vache SMP",
     guild=discord.Object(id=786255946535796759)
 )
-async def first_command(interaction):
-    await interaction.response.send_message("Hello!")
+
+async def balance(interaction:Interaction, player:str):
+    def MakeEmb(username, balance:int):
+        mbd = discord.Embed(title=username)
+        mbd.add_field(name = "Balance", value = balance)
+        return mbd
+    bal=GetPlayerBalance(player)
+    await interaction.response.send_message(embed=MakeEmb(player, bal))
 #endregion
 
 #region Items
@@ -58,9 +64,9 @@ async def first_command(interaction):
     await interaction.response.send_message("Hello!")
 #endregion
 
-#region LD
+#region LB
 @tree.command(
-    name="lb",
+    name="lead",
     description="Outputs the top 10 players by weekly contributions on Vache SMP",
     guild=discord.Object(id=786255946535796759)
 )
