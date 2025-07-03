@@ -12,6 +12,6 @@ def GetPlayerBalance(user):
 def GetAllItemPrices():
     pass
 def GetContributionsLeaderboard():
-    pass
+    return dict
 def GetMoneyLeaderboard():
     pass

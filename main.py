@@ -70,8 +70,13 @@ async def first_command(interaction):
     description="Outputs the top 10 players by weekly contributions on Vache SMP",
     guild=discord.Object(id=786255946535796759)
 )
-async def first_command(interaction):
-    await interaction.response.send_message("Hello!")
+async def leaderboard(interaction:Interaction, player:str):
+    def MakeEmb(players:dict):
+        mbd = discord.Embed(title="Top 10 Players by weekly contributions")
+        for player in players:
+            mbd.add_field(name = player, value = players[player])
+        return mbd
+    await interaction.response.send_message(embed=MakeEmb(GetContributionsLeaderboard()))
 #endregion
 
 #region Rich_Players
@@ -80,8 +85,13 @@ async def first_command(interaction):
     description="Outputs the top 10 richest players on Vache SMP",
     guild=discord.Object(id=786255946535796759)
 )
-async def first_command(interaction):
-    await interaction.response.send_message("Hello!")
+async def rich_leaderboard(interaction:Interaction, player:str):
+    def MakeEmb(players:dict):
+        mbd = discord.Embed(title="Top 10 Richest Players")
+        for player in players:
+            mbd.add_field(name = player, value = players[player])
+        return mbd
+    await interaction.response.send_message(embed=MakeEmb(GetContributionsLeaderboard()))
 #endregion
 
 client.run(TOKEN)
