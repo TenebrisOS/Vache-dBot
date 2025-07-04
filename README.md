@@ -1,7 +1,7 @@
 # Concept
 Simple discord bot that uses a custom modded minecraft server api to show differents informations for discord users 
 ## Commands
-- Outputs a desired player's balance : ```/balance```
+- Outputs a desired player's balance : ```/balance <user>```
 - Outputs all items prices : ```/items```
 - Outputs the top 10 contributors : ```/lead```
 - Outputs the top 10 richest players : ```/lb_rich```
