@@ -10,5 +10,6 @@ If you wish to help supporting my work, consider donating, small funds are alway
 - Bitcoin : ```bc1qfxg9wg97vklzselnayy0eutk5t9cpy048jmzzf```
 - Ethereum : ```0x859477061053a5a6a72466fee128fbdff21a34ba```
 - Solana : ```UDyMrbQh5LTBXAT3K22jRZCfnLpw4CwztiYcXBtvd4t```
+- Verus : ```RWJ67efCytvy2sJewjNQgc4fxjfpWgHUi5```
 ## Credits
 This project was created by [TenebrisOS](https://github.com/TenebrisOS) for [Meek](https://github.com/Meekiavelique)'s api
